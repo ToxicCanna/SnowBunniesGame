@@ -6,6 +6,7 @@ using UnityEngine.InputSystem.HID;
 public class Interact : MonoBehaviour
 {
     [SerializeField] private float interactDistance = 2.0f;
+    [SerializeField] private Transform interactSource;
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -16,7 +17,7 @@ public class Interact : MonoBehaviour
 
     private void Act()
     {
-        Ray ray = new Ray(gameObject.transform.position, gameObject.transform.forward);
+        Ray ray = new Ray(interactSource.position, interactSource.forward);
         if (Physics.Raycast(ray, out RaycastHit hit, interactDistance))
         {
             StartInteract(hit);
@@ -24,7 +25,7 @@ public class Interact : MonoBehaviour
     }
 
     private void StartInteract(RaycastHit hit)
-    {
+    {   
         if (hit.collider.gameObject.GetComponent<IInteractable>() != null)
         {
             IInteractable iInteractable = hit.collider.gameObject.GetComponent<IInteractable>();
