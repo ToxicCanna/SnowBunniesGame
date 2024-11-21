@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickedUpController : MonoBehaviour
+public abstract class PickedUpController : MonoBehaviour
 {
     [SerializeField] protected Transform grabPos;
     protected bool isPickedUp = false;
