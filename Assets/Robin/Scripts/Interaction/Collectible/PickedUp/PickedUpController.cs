@@ -29,5 +29,6 @@ public abstract class PickedUpController : MonoBehaviour
     {
         yield return new WaitForSeconds(switchSwapTime);
         isPickedUp ^= true;
+        Debug.Log(isPickedUp);
     }
 }

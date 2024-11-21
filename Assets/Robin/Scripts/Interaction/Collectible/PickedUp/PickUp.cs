@@ -9,7 +9,6 @@ public abstract class PickUp : PickedUpController, IInteractable
         if (!isPickedUp)
         {
             PickUp(gameObject);
-            Debug.Log(isPickedUp);
         }
     }
     protected void PutDownObj()
