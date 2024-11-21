@@ -24,5 +24,4 @@ public abstract class PickedUpController : MonoBehaviour
         grabbedObject = null;
         isPickedUp = false;
     }
-
 }

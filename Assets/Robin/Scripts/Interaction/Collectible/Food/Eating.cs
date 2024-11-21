@@ -7,7 +7,6 @@ public class Food : UsingItem, IUsingItem
 {
     public void UseItem()
     {
-        Debug.Log("Try use it");
         if (Input.GetMouseButtonDown(1))
         {
             Destroy(gameObject);
