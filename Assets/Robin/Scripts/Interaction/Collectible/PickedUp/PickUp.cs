@@ -14,7 +14,7 @@ public class PickUp : PickedUpController, IInteractable
     }
     private void Update()
     {
-        if (isPickedUp == true && Input.GetMouseButtonDown(0))
+        if (isPickedUp && Input.GetMouseButtonDown(0))
         {
             Release(gameObject);
         }
