@@ -6,7 +6,7 @@ public class UsingItem : PickedUpController
 {
     private void Update()
     {
-        if (isPickedUp && grabPos.GetComponentInChildren<IUsingItem>() != null)
+        if (grabPos.GetComponentInChildren<IUsingItem>() != null)
         {
             IUsingItem iUsingItem = grabPos.GetComponentInChildren<IUsingItem>();
             iUsingItem.UseItem();

@@ -300,6 +300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabPos: {fileID: 2015822721}
+  switchSwapTime: 0.05
 --- !u!1 &241758712
 GameObject:
   m_ObjectHideFlags: 3
@@ -515,6 +516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabPos: {fileID: 2015822721}
+  switchSwapTime: 0.05
 --- !u!114 &801756007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,6 +530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabPos: {fileID: 2015822721}
+  switchSwapTime: 0.05
 --- !u!1 &943598595
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,7 +649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad3cd2bb5ff50a4e920ef60b9d3a8a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 3
+  interactDistance: 1.5
   interactSource: {fileID: 40358275}
 --- !u!114 &943598604
 MonoBehaviour:
@@ -661,6 +664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabPos: {fileID: 2015822721}
+  switchSwapTime: 0.05
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,6 +1383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabPos: {fileID: 2015822721}
+  switchSwapTime: 0.05
 --- !u!54 &1936321349
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1527,6 +1532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabPos: {fileID: 2015822721}
+  switchSwapTime: 0.05
 --- !u!54 &1960165714
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1653,6 +1659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabPos: {fileID: 2015822721}
+  switchSwapTime: 0.05
 --- !u!1 &2015822720
 GameObject:
   m_ObjectHideFlags: 0

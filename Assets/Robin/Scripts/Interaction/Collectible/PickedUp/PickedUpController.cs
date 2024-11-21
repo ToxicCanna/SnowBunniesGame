@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class PickedUpController : MonoBehaviour
 {
     [SerializeField] protected Transform grabPos;
+    [SerializeField] private float switchSwapTime = 0.05f;
     protected bool isPickedUp = false;
 
     protected void PickUp(GameObject grabbedObject)
@@ -13,7 +15,7 @@ public abstract class PickedUpController : MonoBehaviour
         grabbedObject.GetComponent<Rigidbody>().isKinematic = true;
         grabbedObject.transform.position = grabPos.position;
         grabbedObject.transform.SetParent(grabPos);
-        isPickedUp = true;
+        StartCoroutine(CheckSwap());
     }
 
     protected void Release(GameObject grabbedObject)
@@ -21,7 +23,11 @@ public abstract class PickedUpController : MonoBehaviour
         Debug.Log("release");
         grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
         grabbedObject.transform.SetParent(null);
-        grabbedObject = null;
-        isPickedUp = false;
+        StartCoroutine(CheckSwap());
+    }
+    IEnumerator CheckSwap()
+    {
+        yield return new WaitForSeconds(switchSwapTime);
+        isPickedUp ^= true;
     }
 }
