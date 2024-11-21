@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUp : PickedUpController, IInteractable
+public abstract class PickUp : PickedUpController, IInteractable
 {
     public void Interact()
     {
@@ -12,7 +12,7 @@ public class PickUp : PickedUpController, IInteractable
             Debug.Log(isPickedUp);
         }
     }
-    private void Update()
+    protected void PutDownObj()
     {
         if (isPickedUp && Input.GetMouseButtonDown(0))
         {
