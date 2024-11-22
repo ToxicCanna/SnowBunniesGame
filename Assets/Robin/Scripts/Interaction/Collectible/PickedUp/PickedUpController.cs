@@ -18,6 +18,7 @@ public abstract class PickedUpController : MonoBehaviour
     protected void PickUp(GameObject grabbedObject)
     {
         Debug.Log("grab");
+        Debug.Log(grabName);
         grabbedObject.GetComponent<Rigidbody>().isKinematic = true;
         grabbedObject.transform.position = grabPos.position;
         grabbedObject.transform.SetParent(grabPos);
