@@ -7,8 +7,14 @@ public abstract class PickedUpController : MonoBehaviour
 {
     [SerializeField] protected Transform grabPos;
     [SerializeField] private float switchSwapTime = 0.05f;
+    [SerializeField] private string grabName;
+
     protected bool isPickedUp = false;
 
+    public string getName()
+    {
+        return grabName;
+    }
     protected void PickUp(GameObject grabbedObject)
     {
         Debug.Log("grab");
