@@ -234,6 +234,7 @@ GameObject:
   - component: {fileID: 943598598}
   - component: {fileID: 943598603}
   - component: {fileID: 943598604}
+  - component: {fileID: 943598605}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -356,6 +357,19 @@ MonoBehaviour:
   switchSwapTime: 0.05
   grabName: 
   isPickedUp: 0
+--- !u!114 &943598605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943598595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8724c473e87a1ff4b9592c2cdb67d130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabPos: {fileID: 2015822721}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1073,7 +1087,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a22976518b258df458b20e8ca190b7cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grabPos: {fileID: 2015822721}
   switchSwapTime: 0.05
   grabName: Food
 --- !u!54 &1960165714
