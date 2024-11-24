@@ -233,7 +233,6 @@ GameObject:
   - component: {fileID: 943598600}
   - component: {fileID: 943598598}
   - component: {fileID: 943598603}
-  - component: {fileID: 943598604}
   - component: {fileID: 943598605}
   m_Layer: 2
   m_Name: Player
@@ -341,22 +340,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactDistance: 1.5
   interactSource: {fileID: 40358275}
---- !u!114 &943598604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 943598595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd476dc2c93531344bfef5a2b0caf4f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grabPos: {fileID: 2015822721}
-  switchSwapTime: 0.05
-  grabName: 
-  isPickedUp: 0
 --- !u!114 &943598605
 MonoBehaviour:
   m_ObjectHideFlags: 0
