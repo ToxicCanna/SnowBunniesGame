@@ -8,17 +8,29 @@ public class FriendStateMachine : BaseStateMachine
 
     public FriendFollow FriendFollowState => _friendFollowState;
 
+    private FriendTalkState _friendTalkState;
+    public FriendTalkState FriendTalkState => _friendTalkState;
 
-    //private FriendMovement _friendMovement;
+    private FriendSearchState _friendSearchState;
+    public FriendSearchState FriendSearchState => _friendSearchState;
 
-    //public FriendMovement FriendMovement => _friendMovement;
+    private FriendFoundTargetState _friendFoundTargetState;
+    public FriendFoundTargetState FriendFoundTargetState => _friendFoundTargetState;
+    
+    private FriendReturnState _friendReturnState;
+    public FriendReturnState FriendReturnState => _friendReturnState;
+
+
+    private FriendMovement _friendMovement;
+
+    public FriendMovement FriendMovement => _friendMovement;
 
     private void Awake()
     {
         _friendFollowState = new FriendFollow(this);
     }
-        private void Start()
+    private void Start()
     {
-        //SetState(_friendFollowState);
+        SetState(_friendFollowState);
     }
 }

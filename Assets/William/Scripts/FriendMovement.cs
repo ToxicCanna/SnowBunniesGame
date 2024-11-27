@@ -10,15 +10,24 @@ public class FriendMovement : MonoBehaviour
 
     private Transform _currentTarget;
 
+    private Transform _moveToTarget;
+
     private NavMeshAgent _agent;
 
     private bool _isPatrolling = true;
+
+    private bool _isMovingToTarget = false;
 
     private int _currentTargetNum = 0;
 
     private bool _patrollingAscending = true;
 
     [SerializeField] private Transform _defaultFollowTarget;
+
+    [SerializeField] private Transform _lastInQueue;
+
+    [SerializeField] private Transform _playerTransform;
+    [SerializeField] private Transform _talkLocationTransform;
 
     private void Awake()
     {
@@ -29,6 +38,7 @@ public class FriendMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        UpdateMoveToTarget();
         UpdatePatrolling();
         UpdateTargetFollow();
     }
@@ -51,12 +61,14 @@ public class FriendMovement : MonoBehaviour
     public void FollowTarget(Transform target)
     {
         _isPatrolling = false;
+        _isMovingToTarget = false;
         _currentTarget = target;
     }
 
     private void UpdatePatrolling()
     {
         if (!_isPatrolling) return;
+        if (_isMovingToTarget) return;
 
         if (_agent.remainingDistance <= 0.5f)
         {
@@ -67,8 +79,14 @@ public class FriendMovement : MonoBehaviour
     private void UpdateTargetFollow()
     {
         if (_isPatrolling) return;
-
+        if (_isMovingToTarget) return;
         _agent.SetDestination(_currentTarget.position);
+    }
+
+    private void UpdateMoveToTarget()
+    {
+        if (!_isMovingToTarget) return;
+        //not setting destination here because we only need to set it once when we call this. 
     }
 
     private void ChooseNextTarget()
@@ -91,5 +109,61 @@ public class FriendMovement : MonoBehaviour
             }
         }
         
+    }
+
+    public void UpdateQueue(Transform lastInQueueTransform)
+    {
+        _lastInQueue = lastInQueueTransform;
+    }
+
+    public Transform GetLastInQueue()
+    {
+        return _lastInQueue;
+    }
+
+    public Transform GetPlayerPosition()
+    {
+        return _playerTransform;
+    }
+
+    public Transform GetTalkPosition()
+    {
+        return _talkLocationTransform;
+    }
+
+    public void SetMoveToTarget(Transform target)
+    {
+        _moveToTarget = target;
+    }
+    public void MoveTo()
+    {
+        _isMovingToTarget = true;
+        _agent.SetDestination(_moveToTarget.position);
+    }
+
+    public void FinishMoveTo()
+    {
+        _isMovingToTarget = false;
+        _agent.SetDestination(_currentTarget.position);
+    }
+    public void TurnToward(Transform target)
+    { 
+        transform.rotation = Quaternion.LookRotation((target.position - transform.position).normalized);
+    }
+
+    public bool AgentReachedDestination()
+    {
+        // Check if we've reached the destination. from https://discussions.unity.com/t/how-can-i-tell-when-a-navmeshagent-has-reached-its-destination/52403/5
+        if (!_agent.pathPending)
+        {
+            if (_agent.remainingDistance <= _agent.stoppingDistance)
+            {
+                if (!_agent.hasPath || _agent.velocity.sqrMagnitude == 0f)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }
