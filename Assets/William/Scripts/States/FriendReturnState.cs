@@ -11,14 +11,14 @@ public class FriendReturnState : BaseState
     }
     public override void EnterState()
     {
-        _stateMachine.FriendMovement.FollowTarget(_stateMachine.FriendMovement.GetLastInQueue());
-
+        _stateMachine.FriendMovement.FollowTarget(_stateMachine.FriendMovement.GetPlayerPosition());
     }
 
     public override void ExitState()
     {
         _stateMachine.FriendMovement.UpdateQueue(_stateMachine.FriendMovement.transform);
         //drop holding item if possible
+        _stateMachine.FriendCarry.Release();
     }
 
     public override void UpdateState()

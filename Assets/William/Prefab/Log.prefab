@@ -102,12 +102,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.67, y: 2.06, z: 2.59}
+  m_Center: {x: 0.29, y: 0, z: 0}
 --- !u!54 &2045464077267875701
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -158,25 +158,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4273772902663500479}
     m_Modifications:
-    - target: {fileID: 3318167020898467073, guid: 4d0dbaa0ce930ce43b607ff286653f13, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4075135148922301723, guid: 4d0dbaa0ce930ce43b607ff286653f13, type: 3}
       propertyPath: m_Name
       value: WoodHalf
       objectReference: {fileID: 0}
-    - target: {fileID: 7278825480845178406, guid: 4d0dbaa0ce930ce43b607ff286653f13, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7593824375573564512, guid: 4d0dbaa0ce930ce43b607ff286653f13, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7593824375573564512, guid: 4d0dbaa0ce930ce43b607ff286653f13, type: 3}
       propertyPath: m_VersionIndex
-      value: 356
+      value: 368
       objectReference: {fileID: 0}
     - target: {fileID: 7975365281551919265, guid: 4d0dbaa0ce930ce43b607ff286653f13, type: 3}
       propertyPath: m_LocalPosition.x
@@ -251,9 +239,9 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 2.37, z: 1}
-  m_Center: {x: 0.17, y: 1.02, z: -0.33}
+  m_Size: {x: 0.66, y: 2.35, z: 1}
+  m_Center: {x: 0.27, y: 1.23, z: -0.33}
