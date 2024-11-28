@@ -11,7 +11,8 @@ public class FriendFollow : BaseState
     }
     public override void EnterState()
     {
-        _stateMachine.FriendMovement.FollowTarget(_stateMachine.FriendMovement.GetLastInQueue());
+        Debug.Log(_stateMachine.FriendMovement.GetLastInQueue());
+       //_stateMachine.FriendMovement.FollowTarget(_stateMachine.FriendMovement.GetLastInQueue());
 
     }
 

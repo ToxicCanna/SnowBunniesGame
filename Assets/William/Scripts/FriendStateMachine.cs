@@ -25,9 +25,20 @@ public class FriendStateMachine : BaseStateMachine
 
     public FriendMovement FriendMovement => _friendMovement;
 
+    private FriendCarry _friendCarry;
+
+    public FriendCarry FriendCarry => _friendCarry;
+
     private void Awake()
     {
         _friendFollowState = new FriendFollow(this);
+        _friendTalkState = new FriendTalkState(this);
+        _friendSearchState = new FriendSearchState(this);
+        _friendFoundTargetState = new FriendFoundTargetState(this);
+        _friendReturnState = new FriendReturnState(this);
+
+        _friendMovement = GetComponent<FriendMovement>();
+        _friendCarry = GetComponent<FriendCarry>();
     }
     private void Start()
     {
