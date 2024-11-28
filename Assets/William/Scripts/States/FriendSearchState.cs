@@ -11,15 +11,18 @@ public class FriendSearchState : BaseState
     }
     public override void EnterState()
     {
-        if (_stateMachine.FriendMovement.GetLastInQueue() == _stateMachine.FriendMovement.transform)
+        if (_stateMachine.FriendMovement.GetLastInQueue() == _stateMachine.FriendMovement.transform) //if Im last
         {
             _stateMachine.FriendMovement.UpdateQueue(_stateMachine.FriendMovement.GetPlayerPosition());
         }
-        _stateMachine.FriendMovement.SetPatrolling(true);
+
+        _stateMachine.FriendMovement.StartPatrolling();
+        //Debug.Log("Patrolling");
     }
 
     public override void ExitState()
     {
+        //Debug.Log("exit patrolling");
         _stateMachine.FriendMovement.SetPatrolling(false);
     }
 
