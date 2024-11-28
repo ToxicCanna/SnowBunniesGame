@@ -8,6 +8,7 @@ public class FriendCarry : MonoBehaviour
 
     public void Lift(GameObject target)
     {
+        Debug.Log("Lift");
         if (_grabPosition.childCount == 0)
         {
             if (target.GetComponent<RegularObj>())
@@ -24,6 +25,7 @@ public class FriendCarry : MonoBehaviour
 
     public void Release()
     {
+        Debug.Log("Release");
         if (_grabPosition.childCount > 0)
         {
             _grabPosition.GetChild(0).SetParent(null);

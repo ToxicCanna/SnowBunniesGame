@@ -29,6 +29,7 @@ public class FriendFoundTargetState : BaseState
 
     private void InteractAndReturn()
     {
+        _stateMachine.FriendCarry.Lift(_stateMachine.FriendMovement.GetMoveToTarget().parent.gameObject);
         _stateMachine.SetState(_stateMachine.FriendReturnState);
     }
 

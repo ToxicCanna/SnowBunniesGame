@@ -23,7 +23,7 @@ public class FriendMovement : MonoBehaviour
     private bool _patrollingAscending = true;
 
     [SerializeField] private Transform _defaultFollowTarget;
-
+   // [SerializeField] private Transform _firstInQueue;
     [SerializeField] private Transform _lastInQueue;
 
     [SerializeField] private Transform _playerTransform;
@@ -48,6 +48,16 @@ public class FriendMovement : MonoBehaviour
         _isPatrolling = value;
     }
 
+    public void StartPatrolling()
+    {
+        SetPatrolling(true);
+        _agent.isStopped = false;
+        _isMovingToTarget = false;
+    }
+
+    public bool IsPatrolling()
+    { return _isPatrolling; }
+
     public void StopMovement()
     {
         _agent.isStopped = true;
@@ -63,6 +73,7 @@ public class FriendMovement : MonoBehaviour
         _isPatrolling = false;
         _isMovingToTarget = false;
         _currentTarget = target;
+        _agent.stoppingDistance = 3f;
     }
 
     private void UpdatePatrolling()
@@ -70,7 +81,7 @@ public class FriendMovement : MonoBehaviour
         if (!_isPatrolling) return;
         if (_isMovingToTarget) return;
 
-        if (_agent.remainingDistance <= 0.5f)
+        if (_agent.remainingDistance <= 3f)
         {
             ChooseNextTarget();
         }
@@ -121,6 +132,11 @@ public class FriendMovement : MonoBehaviour
         return _lastInQueue;
     }
 
+ /*   public Transform GetFirstInQueue()
+    {
+        return _firstInQueue;
+    }*/
+
     public Transform GetPlayerPosition()
     {
         return _playerTransform;
@@ -135,16 +151,23 @@ public class FriendMovement : MonoBehaviour
     {
         _moveToTarget = target;
     }
+
+    public Transform GetMoveToTarget()
+    {
+        return _moveToTarget;
+    }
     public void MoveTo()
     {
         _isMovingToTarget = true;
         _agent.SetDestination(_moveToTarget.position);
+        _agent.stoppingDistance = 0;
     }
 
     public void FinishMoveTo()
     {
         _isMovingToTarget = false;
         _agent.SetDestination(_currentTarget.position);
+        _agent.stoppingDistance = 3;
     }
     public void TurnToward(Transform target)
     { 
@@ -165,5 +188,10 @@ public class FriendMovement : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public Transform GetFollowTarget()
+    {
+        return _currentTarget;
     }
 }
