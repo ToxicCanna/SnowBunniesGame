@@ -9,8 +9,8 @@ public class PlayerStatsManager : Singleton<PlayerStatsManager>
     private float warmthValue;
     private float maxWarmthValue = 100f;
 
-    private float hungerDrainRate = 1f; // Amount hunger decreases per second
-    private float warmthDrainRate = 0.5f; // Amount warmth decreases per second
+    [SerializeField] private float hungerDrainRate = 1f; // Amount hunger decreases per second
+    [SerializeField] private float warmthDrainRate = 0.5f; // Amount warmth decreases per second
 
     public float GetHungerValue() => hungerValue;
     public float GetMaxHungerValue() => maxHungerValue;
@@ -25,12 +25,12 @@ public class PlayerStatsManager : Singleton<PlayerStatsManager>
 
     public void AddValueToHunger(float value)
     {
-        hungerValue = Mathf.Min(hungerValue + value, maxHungerValue);
+        hungerValue = Mathf.Min(hungerValue + value, maxHungerValue);//cap the stats at the maximum
     }
 
     public void AddValueToWarmth(float value)
     {
-        warmthValue = Mathf.Min(warmthValue + value, maxWarmthValue);
+        warmthValue = Mathf.Min(warmthValue + value, maxWarmthValue);//cap the stats at the maximum
     }
 
     public void SetWarmthToMax()
