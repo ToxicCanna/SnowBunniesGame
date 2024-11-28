@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -11,6 +11,7 @@ public class Food : UsingItem, IUsingItem
         {
             Destroy(gameObject);
             Debug.Log("I have eaten something");
+            PlayerStatsManager.Instance.AddValueToHunger(20);
         }
     }
 }
