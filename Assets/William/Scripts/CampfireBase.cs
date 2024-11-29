@@ -16,9 +16,9 @@ public class CampfireBase : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        
 
-        if (other.gameObject.CompareTag("Stick"))
+
+        if (other.gameObject.CompareTag("Stick") && campfireModel.activeSelf == (false))
         {
             _currentSticks++;
             Destroy(other.gameObject);
