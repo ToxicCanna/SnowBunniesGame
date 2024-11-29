@@ -18,7 +18,7 @@ public class FriendReturnState : BaseState
     {
         _stateMachine.FriendMovement.UpdateQueue(_stateMachine.FriendMovement.transform);
         //drop holding item if possible
-        _stateMachine.FriendCarry.Release();
+
     }
 
     public override void UpdateState()

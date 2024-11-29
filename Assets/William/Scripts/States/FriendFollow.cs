@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FriendFollow : BaseState
@@ -23,7 +24,10 @@ public class FriendFollow : BaseState
 
     public override void UpdateState()
     {
-        
+        if (_stateMachine.FriendMovement.AgentReachedDestination())
+        {
+            _stateMachine.FriendCarry.Release();
+        }
     }
 
 }

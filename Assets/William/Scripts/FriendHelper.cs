@@ -9,6 +9,8 @@ public class FriendHelper : MonoBehaviour
     private FriendStateMachine _activeFriend;
     [SerializeField] private Button friendTalkButton;
     [SerializeField] private GameObject buttonUI;
+    [SerializeField] private GameObject buttonBunny;
+    [SerializeField] private GameObject buttonDecor;
 
     public void FirstInLineOpenUI()
     {
@@ -20,6 +22,8 @@ public class FriendHelper : MonoBehaviour
                 _activeFriend.JumpToTalkState();
                 friendTalkButton.enabled = false;
                 buttonUI.SetActive(true);
+                buttonBunny.SetActive(false);
+                buttonDecor.SetActive(true);
             }
         }
     }
@@ -27,7 +31,9 @@ public class FriendHelper : MonoBehaviour
     public void FindAndInteract(string tag)
     {
         friendTalkButton.enabled = true;
-        buttonUI.SetActive(false);
+        buttonUI.SetActive(false);              
+        buttonBunny.SetActive(true);
+        buttonDecor.SetActive(false);
         _activeFriend.FriendFind.SetTag(tag);
         _activeFriend.JumpToSearchState();
     }
