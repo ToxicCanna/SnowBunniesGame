@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainBaseBase : MonoBehaviour
 {
@@ -38,6 +40,8 @@ public class MainBaseBase : MonoBehaviour
                     textUI.gameObject.SetActive(false);
                     stickModelForUI.SetActive(false);
                     logModelForUI.SetActive(false);
+
+                    StartCoroutine(WinTimer());
                 }
             }
         }
@@ -54,9 +58,17 @@ public class MainBaseBase : MonoBehaviour
                     textUI.gameObject.SetActive(false);
                     stickModelForUI.SetActive(false);
                     logModelForUI.SetActive(false);
+
+                    StartCoroutine(WinTimer());
                 }
             }
         }
+    }
 
+    private IEnumerator WinTimer()
+    {
+        yield return new WaitForSeconds(5f);
+
+        SceneManager.LoadScene("YouWin");
     }
 }

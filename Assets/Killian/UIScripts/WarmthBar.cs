@@ -22,7 +22,7 @@ public class WarmthBar : MonoBehaviour
         _target = PlayerStatsManager.Instance.GetWarmthValue() / PlayerStatsManager.Instance.GetMaxWarmthValue();
 
         // Update the fill amount of the warmth bar
-        _image.fillAmount = Mathf.Lerp(_image.fillAmount, _target, Time.deltaTime * 2f); // Lerp the value smoothly over time
+        _image.fillAmount = Mathf.Lerp(_image.fillAmount, _target, Time.deltaTime); // Lerp the value smoothly over time
 
         // Update the color based on the fill amount
         CheckWarmthBarGradientAmount();

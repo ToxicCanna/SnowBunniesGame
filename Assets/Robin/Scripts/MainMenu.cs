@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,10 +10,16 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(levelName);
     }
-
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadSceneAsync("MainMenu");
+    }
     public void Exit()
     {
         Debug.Log("Exit");
         Application.Quit();
+#if UNITY_EDITOR
+        EditorApplication.isPlaying = false;
+#endif
     }
 }
