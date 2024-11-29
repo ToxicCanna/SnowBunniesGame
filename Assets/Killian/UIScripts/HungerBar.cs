@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class HungerBar : MonoBehaviour
 {
-    [SerializeField] private float _timeToDrain = 0.75f;
     [SerializeField] private Image _image;
     [SerializeField] private Gradient _gradient;
     private float _target;
@@ -21,27 +20,16 @@ public class HungerBar : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void UpdateHungerBar()
+    void Update()
     {
-        _target = (PlayerStatsManager.Instance.GetHungerValue() / PlayerStatsManager.Instance.GetMaxHungerValue());
-        _image.color = _gradient.Evaluate(_image.fillAmount);
+        // Update the target based on the player's hunger value
+        _target = PlayerStatsManager.Instance.GetHungerValue() / PlayerStatsManager.Instance.GetMaxHungerValue();
 
-        drainHungerBarCoroutine = StartCoroutine(DrainHungerBar());
+        // Update the fill amount of the hunger bar
+        _image.fillAmount = Mathf.Lerp(_image.fillAmount, _target, Time.deltaTime * 2f); // Lerp the value smoothly over time
+
+        // Update the color based on the fill amount
         CheckHungerBarGradientAmount();
-
-    }
-    private IEnumerator DrainHungerBar()
-    {
-        float fillAmount = _image.fillAmount;
-        float elapsedTime = 0f;
-        while (elapsedTime <= _timeToDrain);
-        {
-            elapsedTime += Time.deltaTime;
-
-            _image.fillAmount = Mathf.Lerp(fillAmount, _target, (elapsedTime / _timeToDrain));
-
-            yield return null;
-        }
     }
 
     private void CheckHungerBarGradientAmount()
