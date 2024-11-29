@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStatsManager : Singleton<PlayerStatsManager>
 {
@@ -86,9 +87,6 @@ public class PlayerStatsManager : Singleton<PlayerStatsManager>
     {
         // This method will handle game over logic
         Debug.Log("Game Over! Hunger or Warmth reached 0 for 5 seconds.");
-        Application.Quit();
-#if UNITY_EDITOR
-        EditorApplication.isPlaying = false;
-#endif
+        SceneManager.LoadSceneAsync("YouLose");
     }
 }
