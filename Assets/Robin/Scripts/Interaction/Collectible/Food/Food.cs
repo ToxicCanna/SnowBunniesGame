@@ -11,7 +11,7 @@ public class Food : UsingItem, IUsingItem
         {
             Destroy(gameObject);
             Debug.Log("I have eaten something");
-            PlayerStatsManager.Instance.AddValueToHunger(20);
+            PlayerStatsManager.Instance.AddValueToHunger(0.25f);
         }
     }
 }
