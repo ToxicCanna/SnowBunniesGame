@@ -105,6 +105,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8085783140105818142}
     m_Modifications:
+    - target: {fileID: 733638955561343626, guid: 8534d699f74bb314ca663bafe22a96a1, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1327310276841469076, guid: 8534d699f74bb314ca663bafe22a96a1, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1874426863277425190, guid: 8534d699f74bb314ca663bafe22a96a1, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1996838240694848317, guid: 8534d699f74bb314ca663bafe22a96a1, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2404386896264740648, guid: 8534d699f74bb314ca663bafe22a96a1, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2844842440423062845, guid: 8534d699f74bb314ca663bafe22a96a1, type: 3}
       propertyPath: m_Name
       value: Carrot
@@ -168,6 +188,42 @@ PrefabInstance:
     - target: {fileID: 3292034588209964218, guid: 8534d699f74bb314ca663bafe22a96a1, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3510111314718029199, guid: 8534d699f74bb314ca663bafe22a96a1, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4136240965126592863, guid: 8534d699f74bb314ca663bafe22a96a1, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6108928397779848874, guid: 8534d699f74bb314ca663bafe22a96a1, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7195883005526681328, guid: 8534d699f74bb314ca663bafe22a96a1, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7226612549385047351, guid: 8534d699f74bb314ca663bafe22a96a1, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7434009358883143139, guid: 8534d699f74bb314ca663bafe22a96a1, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614516421953039633, guid: 8534d699f74bb314ca663bafe22a96a1, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355615968036024499, guid: 8534d699f74bb314ca663bafe22a96a1, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8846277161925808221, guid: 8534d699f74bb314ca663bafe22a96a1, type: 3}
+      propertyPath: m_Convex
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
