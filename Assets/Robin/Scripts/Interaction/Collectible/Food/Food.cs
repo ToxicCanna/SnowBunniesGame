@@ -5,13 +5,14 @@ using UnityEngine.InputSystem;
 
 public class Food : UsingItem, IUsingItem
 {
+    [SerializeField] private float foodValue = 0.25f;
     public void UseItem()
     {
         if (Input.GetMouseButtonDown(1))
         {
             Destroy(gameObject);
             Debug.Log("I have eaten something");
-            PlayerStatsManager.Instance.AddValueToHunger(0.25f);
+            PlayerStatsManager.Instance.AddValueToHunger(foodValue);
         }
     }
 }

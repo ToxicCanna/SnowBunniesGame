@@ -7,16 +7,16 @@ using UnityEngine.SceneManagement;
 public class PlayerStatsManager : Singleton<PlayerStatsManager>
 {
     private float hungerValue;
-    private float maxHungerValue = 100f;
+    [SerializeField] private float maxHungerValue = 100f;
     private float warmthValue;
-    private float maxWarmthValue = 100f;
+    [SerializeField] private float maxWarmthValue = 100f;
 
     [SerializeField] private float hungerDrainRate = 1f; // Amount hunger decreases per second
     [SerializeField] private float warmthDrainRate = 0.5f; // Amount warmth decreases per second
 
     private float zeroHungerTime = 0f; // Timer to track how long hunger has been at 0
     private float zeroWarmthTime = 0f; // Timer to track how long warmth has been at 0
-    private float timeThreshold = 5f; // Time limit to lose the game if hunger or warmth is 0
+    [SerializeField] private float timeThreshold = 5f; // Time limit to lose the game if hunger or warmth is 0
 
 
     public float GetHungerValue() => hungerValue;
