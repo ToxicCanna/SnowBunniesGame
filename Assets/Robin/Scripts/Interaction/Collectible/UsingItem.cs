@@ -8,9 +8,9 @@ public abstract class UsingItem : PickUp
     {
         PutDownObj();
 
-        if (grabPos.GetComponentInChildren<IUsingItem>() != null)
+        if (GrabPos.Instance.grabPos.GetComponentInChildren<IUsingItem>() != null)
         {
-            IUsingItem iUsingItem = grabPos.GetComponentInChildren<IUsingItem>();
+            IUsingItem iUsingItem = GrabPos.Instance.grabPos.GetComponentInChildren<IUsingItem>();
             iUsingItem.UseItem();
         }
     }
